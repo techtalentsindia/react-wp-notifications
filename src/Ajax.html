@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling Announcements</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=gl5BNdCoEWQzsVpf6pwtnw11tYwotLHZBbjxHzsFpEXk9QzrpvCo6fn8Y7QZUlMB7K-HKTCXw2s5ilFT_zg1P5jXuBDNoA-LfwjT17v3DK2zWJeU1noakLuIMR0TNaMWDdU0vIGQQ8Mo2PUG-Ev32r3fMWMssPy5uiMtWmLBNNRg8379oi3-uVuLFjLpzp-lQ8tsrd47mBhjXEfYq-PALA" charset="UTF-8"></script><script>
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML =
+                        this.responseText;
+                }
+            };
+            xhttp.open("GET", "https://test.venngroup.in/wp-json/wp/v2/notification", true);
+            xhttp.send();
+        }
+    </script>
+    <style>
+        /* Style for the scrolling container */
+        .announcement-container {
+            height: 200px;
+            /* Set the desired height for the scrolling area */
+            overflow: hidden;
+            /* Hide overflow content */
+            border: 1px solid #ccc;
+        }
+
+        /* Style for the scrolling text */
+        .announcement-text {
+            animation: scrollUp 10s linear 1s infinite;
+            /* Adjust the duration as needed */
+        }
+
+        /* Keyframes for scrolling animation */
+        @keyframes scrollUp {
+            0% {
+                transform: translateY(100%);
+            }
+
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body onload="loadDoc()">
+    <div id="demo">
+        <div class="announcement-container">
+            <div class="announcement-text">
+                    <h5><img src="https://venn.techtalents.in/wp-content/uploads/2024/03/newicon.png" width="30" height="30"/>      
+    </div>
+</body>
+
+</html>
