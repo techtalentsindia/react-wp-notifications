@@ -14,7 +14,21 @@
                         this.responseText;
                 }
             };
-            xhttp.open("GET", "https://test.venngroup.in/wp-json/wp/v2/notification", true);
+            <!-- REFER THE BELOW CODE TO GET NOTIFICATIONS AS JSON ITEMS AND DISPLAY THEM IN A SCROLLING CONTAINER 
+                <div class="announcement-container">
+                    <div class="announcement-text">
+                        <section id="notifs" class="col-sm-6 section">
+                         <h3 class="title" align="center"> 
+                            xhttp.open("GET", "https://test.venngroup.in/wp-json/wp/v2/notification", true);
+                                WHILE  ( THERE ARE NOTIFIATIONS DATA AVAILABLE ):
+                          <h5><img src="https://venn.techtalents.in/wp-content/uploads/2024/03/newicon.png" width="30" height="30"/>
+                         <a href=" <?php the_permalink() ?> " target="_blank"> <?php the_title() ?> </a></h5> 
+                                END OF WHILE  
+                         </section>
+                    </div>
+                </div>
+                -->
+                /* END OF SCROLLING CODE */
             xhttp.send();
         }
     </script>
