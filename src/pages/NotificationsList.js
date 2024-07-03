@@ -24,7 +24,7 @@ class UpdateNotification extends Component {
     updateUser = event => {
         event.preventDefault()
 
-        window.location.href = `/movies/update/${this.props.id}`
+        window.location.href = `/notifications/update/${this.props.id}`
     }
 
     render() {
@@ -38,7 +38,7 @@ class DeleteNotification extends Component {
 
         if (
             window.confirm(
-                `Do tou want to delete the movie ${this.props.id} permanently?`,
+                `Do tou want to delete the notification ${this.props.id} permanently?`,
             )
         ) {
             api.deleteNotificationById(this.props.id)
@@ -55,7 +55,7 @@ class NotificationsList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            movies: [],
+            notifications: [],
             columns: [],
             isLoading: false,
         }
@@ -66,16 +66,16 @@ class NotificationsList extends Component {
         // Actually Here You Can Use Fetch Api To Get The Notifications PLEASE REFER Ajax.Html
         // xhttp.open("GET", "https://test.venngroup.in/wp-json/wp/v2/notification", true);
 
-        await api.getAllNotifications().then(movies => {
+        await api.getAllNotifications().then(notifications => {
             this.setState({
-                movies: movies.data.data,
+                notifications: notifications.data.data,
                 isLoading: false,
             })
         })
     }
 
     render() {
-        const { movies, isLoading } = this.state
+        const { notifications, isLoading } = this.state
 
         const columns = [
             {
@@ -123,7 +123,7 @@ class NotificationsList extends Component {
         ]
 
         let showTable = true
-        if (!movies.length) {
+        if (!notifications.length) {
             showTable = false
         }
 /*
@@ -133,7 +133,7 @@ ACTUALLY HERE WE HAVE TO RETURN THE MARQEE ELEMENTS (SCROLLING). Use the contain
             <Wrapper>
                 {showTable && (
                     <ReactTable
-                        data={movies}
+                        data={notifications}
                         columns={columns}
                         loading={isLoading}
                         defaultPageSize={10}
